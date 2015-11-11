@@ -12,6 +12,30 @@ public class HumanPlayer extends Player {
   }
  
   public final void handleCommand(HumanPlayerCommand c) {
-    // TODO
+    if (c==HumanPlayerCommand.SPEED_UP) {
+    	if(this.getSpeed() < Constants.MAX_SPEED){
+    		acelerar();
+    	}
+    }
+    if (c==HumanPlayerCommand.SPEED_DOWN){
+    	if(this.getSpeed() > 0){
+    		abrandar();
+    	}
+    }
+    
+    if(c == HumanPlayerCommand.TURN_LEFT){
+    	this.setDirection(this.getDirection() - 10);
+    }
+    if(c == HumanPlayerCommand.TURN_RIGHT){
+    	this.setDirection(this.getDirection() + 10);
+    }
+   
+  }
+  
+  public void acelerar() {
+	  this.setReferenceSpeed(this.getSpeed() + 1);
+  }
+  public void abrandar(){
+	  this.setReferenceSpeed(this.getSpeed() - 1);
   }
 }
