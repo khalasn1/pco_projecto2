@@ -11,12 +11,12 @@ public abstract class Player extends MovingElement {
   private int value_waypoint = 0;
 
   public final int getTargetWayPoint() {
-    // TODO: supostamente completo.
+
     return this.value_waypoint;
   }
   
   public final void advanceToNextWayPoint() {
-      // supostamente completo.
+
     this.value_waypoint = this.value_waypoint + 1;
   }
   
