@@ -5,7 +5,7 @@ import spacerace.Coord2D;
 import spacerace.GameState;
 import spacerace.MovingElement;
 import spacerace.SoundEffect;
-
+import spacerace.players.HumanPlayer;
 
 
 public final class WayPoint extends Area {
@@ -25,17 +25,20 @@ public final class WayPoint extends Area {
   
   @Override
   public void interactWith(GameState gs, MovingElement e) {
-	  
-	  if (gs.getHumanPlayer().getTargetWayPoint() == gs.numberOfWaypoints()) {
+
+      HumanPlayer h = gs.getHumanPlayer();
+
+
+	  if (h.getTargetWayPoint() == gs.numberOfWaypoints()) {
 		  
 		  gs.playSound(SoundEffect.PLAYER_WON);
 		  gs.gameIsOver();
 		  
 	  }
 	  
-	  else if (gs.getHumanPlayer().getTargetWayPoint() == getIndex()){
+	  else if(h.getTargetWayPoint() == getIndex()){
 		  gs.playSound(SoundEffect.WAYPOINT_REACHED);
-		  gs.getHumanPlayer().advanceToNextWayPoint();
+		  h.advanceToNextWayPoint();
 	  }
 	}
     

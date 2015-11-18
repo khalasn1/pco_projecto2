@@ -37,6 +37,7 @@ public class GameLevelReader {
                                   readSpeed(inp)));
             break;
             // TODO OUTROS CASOS
+            // adicionar todas as classes da Area
           default:
 
         }

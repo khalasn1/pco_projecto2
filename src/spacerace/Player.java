@@ -8,16 +8,17 @@ public abstract class Player extends MovingElement {
  
   }
 
-  private int value_waypoint = 0;
+  // proximo waypoint.
+  private int target_waypoint = 0;
 
   public final int getTargetWayPoint() {
 
-    return this.value_waypoint;
+    return this.target_waypoint;
   }
   
   public final void advanceToNextWayPoint() {
 
-    this.value_waypoint = this.value_waypoint + 1;
+    this.target_waypoint = this.target_waypoint + 1;
   }
   
   /**
