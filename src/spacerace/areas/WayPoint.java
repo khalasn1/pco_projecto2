@@ -28,15 +28,11 @@ public final class WayPoint extends Area {
 
       HumanPlayer h = gs.getHumanPlayer();
 
-
-	  if (h.getTargetWayPoint() == gs.numberOfWaypoints()) {
-		  
-		  gs.playSound(SoundEffect.PLAYER_WON);
-		  gs.gameIsOver();
-		  
-	  }
-	  
-	  else if(h.getTargetWayPoint() == getIndex()){
+      if(h.getTargetWayPoint() == getIndex()){
+          if (getIndex() == gs.numberOfWaypoints()) {
+              gs.playSound(SoundEffect.PLAYER_WON);
+              gs.gameIsOver();
+          }
 		  gs.playSound(SoundEffect.WAYPOINT_REACHED);
 		  h.advanceToNextWayPoint();
 	  }
