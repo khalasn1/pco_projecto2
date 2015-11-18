@@ -10,7 +10,7 @@ public class HumanPlayer extends Player {
   public HumanPlayer(Coord2D location, double direction) {
     super(location, direction, 0);
   }
- 
+  
   public final void handleCommand(HumanPlayerCommand c) {
     if (c==HumanPlayerCommand.SPEED_UP) {
     	if(this.getSpeed() < Constants.MAX_SPEED){
@@ -37,5 +37,5 @@ public class HumanPlayer extends Player {
   }
   public void abrandar(){
 	  this.setReferenceSpeed(this.getSpeed() - 1);
-  }
+  } 
 }

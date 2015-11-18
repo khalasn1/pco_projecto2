@@ -9,22 +9,22 @@ import spacerace.MovingElement;
 
 public final class WayPoint extends Area {
 
-  // TODO
+  private int index;
   
   public WayPoint(Coord2D location, int index) {
     super(location);
-    // TODO
+    
+    this.index = index;
   }
 
   public int getIndex() {
-    // TODO
-    return -1;
+    return this.index;
   }
 
   
   @Override
   public void interactWith(GameState gs, MovingElement e) {
-    // TODO
+    //TODO
   }
   
   /**
