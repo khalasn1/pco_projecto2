@@ -4,6 +4,7 @@ import spacerace.Area;
 import spacerace.Coord2D;
 import spacerace.GameState;
 import spacerace.MovingElement;
+import spacerace.SoundEffect;
 
 
 
@@ -24,9 +25,20 @@ public final class WayPoint extends Area {
   
   @Override
   public void interactWith(GameState gs, MovingElement e) {
-    //TODO
-  }
-  
+	  
+	  if (gs.getHumanPlayer().getTargetWayPoint() == gs.numberOfWaypoints()) {
+		  
+		  gs.playSound(SoundEffect.PLAYER_WON);
+		  gs.gameIsOver();
+		  
+	  }
+	  
+	  else if (gs.getHumanPlayer().getTargetWayPoint() == getIndex()){
+		  gs.playSound(SoundEffect.WAYPOINT_REACHED);
+		  gs.getHumanPlayer().advanceToNextWayPoint();
+	  }
+	}
+    
   /**
    * Yield way-point index as label.
    * @return A string for the way-point index.
