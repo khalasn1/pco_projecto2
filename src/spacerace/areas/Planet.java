@@ -16,7 +16,7 @@ public final class Planet extends Area {
 
 	@Override
 	public void interactWith(GameState gs, MovingElement e) {
-		// TODO Auto-generated method stub
+
 		
 	}
   
