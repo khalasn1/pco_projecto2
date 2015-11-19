@@ -1,10 +1,6 @@
 package spacerace.areas;
 
-import spacerace.Area;
-import spacerace.Coord2D;
-import spacerace.GameState;
-import spacerace.MovingElement;
-import spacerace.SoundEffect;
+import spacerace.*;
 import spacerace.players.HumanPlayer;
 
 
@@ -15,7 +11,9 @@ public final class WayPoint extends Area {
   public WayPoint(Coord2D location, int index) {
     super(location);
     
-    this.index = index;
+      this.index = index;
+      setLocation(location);
+
   }
 
   public int getIndex() {
@@ -26,16 +24,19 @@ public final class WayPoint extends Area {
   @Override
   public void interactWith(GameState gs, MovingElement e) {
 
-      HumanPlayer h = gs.getHumanPlayer();
+      Player[] p = gs.getPlayers();
 
-      if(h.getTargetWayPoint() == getIndex()){
-          if (getIndex() == gs.numberOfWaypoints()) {
-              gs.playSound(SoundEffect.PLAYER_WON);
-              gs.gameIsOver();
+      for (int i = 0; i < p.length; i++) {
+          if(p[i].getTargetWayPoint() == getIndex()){
+              if (getIndex() == gs.numberOfWaypoints()) {
+                  gs.playSound(SoundEffect.PLAYER_WON);
+                  gs.gameIsOver();
+              }
+              gs.playSound(SoundEffect.WAYPOINT_REACHED);
+              p[i].advanceToNextWayPoint();
           }
-		  gs.playSound(SoundEffect.WAYPOINT_REACHED);
-		  h.advanceToNextWayPoint();
-	  }
+      }
+
 	}
     
   /**
