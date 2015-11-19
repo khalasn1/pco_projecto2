@@ -43,10 +43,10 @@ public class GameLevelReader {
                         gs.addArea(new BlackHole(readCoord(inp)));
                         break;
                     case "Planet":
-                        //cenas
+                        gs.addArea(new Planet(readCoord(inp)));
                         break;
                     case "WormHole":
-                        // cenas
+                        gs.addArea(new WormHole(readCoord(inp), readCoord(inp)));
                         break;
                     default:
 
