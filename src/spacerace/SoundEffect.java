@@ -31,5 +31,5 @@ public enum SoundEffect {
   /**
    * All players dead.
    */
-  ALL_PLAYERS_DEAD;
+  ALL_PLAYERS_DEAD
 }

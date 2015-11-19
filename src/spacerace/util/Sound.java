@@ -124,7 +124,7 @@ public final class Sound {
       for (Port.Info type : types) {
         if (AudioSystem.isLineSupported(type)) { 
           //System.err.println(type + " sound device is active!");
-          Line l = (Port) AudioSystem.getLine(type);
+          Line l = AudioSystem.getLine(type);
           l.open();
           volumeControl = (FloatControl) l.getControl(FloatControl.Type.VOLUME);
           break;

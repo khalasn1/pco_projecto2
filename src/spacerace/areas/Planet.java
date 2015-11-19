@@ -12,6 +12,8 @@ public final class Planet extends Area {
 
 	protected Planet(Coord2D location) {
 		super(location);
+
+		setLocation(location);
 	}
 
 	@Override

@@ -20,5 +20,5 @@ public enum HumanPlayerCommand {
   /**
    * Turn right.
    */
-  TURN_RIGHT;
+  TURN_RIGHT
 }
