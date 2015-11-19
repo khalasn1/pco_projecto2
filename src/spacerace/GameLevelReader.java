@@ -38,6 +38,10 @@ public class GameLevelReader {
             break;
           case "Dust":
         	  gs.addArea(new Dust(readCoord(inp)));
+        	  break;
+          case "BlackHole":
+        	  gs.addArea(new BlackHole(readCoord(inp)));
+        	  break;
           default:
 
         }
