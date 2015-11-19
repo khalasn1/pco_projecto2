@@ -28,12 +28,13 @@ public final class WayPoint extends Area {
 
       for (int i = 0; i < p.length; i++) {
           if(p[i].getTargetWayPoint() == getIndex()){
-              if (getIndex() == gs.numberOfWaypoints()) {
+              if (getIndex() == gs.numberOfWaypoints()-1) {
                   gs.playSound(SoundEffect.PLAYER_WON);
                   gs.gameIsOver();
               }
               gs.playSound(SoundEffect.WAYPOINT_REACHED);
               p[i].advanceToNextWayPoint();
+              
           }
       }
 

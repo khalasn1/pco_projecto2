@@ -36,8 +36,8 @@ public class GameLevelReader {
                                   readDirection(inp),
                                   readSpeed(inp)));
             break;
-            // TODO OUTROS CASOS
-            // adicionar todas as classes da Area
+          case "Dust":
+        	  gs.addArea(new Dust(readCoord(inp)));
           default:
 
         }
