@@ -39,9 +39,10 @@ public class GameLevelReader {
                         break;
                     case "LooseAsteroid":
                         gs.addAsteroid(
-                                new LooseAsteroid(readCoord(inp),
-                                        readDirection(inp),
-                                        readSpeed(inp)));
+                                new LooseAsteroid(readCoord(inp), readDirection(inp), readSpeed(inp)));
+                        break;
+                    case "CrazyAsteroid":
+                        //gs.addAsteroid(new CrazyAsteroid(readCoord(inp),readDirection(inp),readSpeed(inp)));
                         break;
                     case "Dust":
                         gs.addArea(new Dust(readCoord(inp)));
@@ -55,6 +56,8 @@ public class GameLevelReader {
                     case "WormHole":
                         gs.addArea(new WormHole(readCoord(inp), readCoord(inp)));
                         break;
+                    case "StraightAheadPlayer":
+                        gs.addAIPlayer(new StraightAheadPlayer(readCoord(inp), readDirection(inp), readSpeed(inp)));
                     default:
                 }
             }
