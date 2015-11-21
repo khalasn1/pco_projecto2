@@ -21,7 +21,9 @@ public final class Trail extends Decoration {
   public void step(GameState gs) {
 	  if (step > 0) {
 		  step = step - 1; 
-		 
+	  }
+	  else{
+		  this.die();
 	  }
   }
   
@@ -29,7 +31,7 @@ public final class Trail extends Decoration {
   @Override
   public void draw(Graphics g) {
     g.setColor(c);
-    int x = (int) this.getLocation().getX();
+    int x = (int) this.getLocation().getX() - 10;
     int y = (int) this.getLocation().getY();
     g.fillOval(x, y, step , step );
   }
