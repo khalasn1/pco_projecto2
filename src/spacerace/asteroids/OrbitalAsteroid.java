@@ -10,7 +10,7 @@ public final class OrbitalAsteroid extends Asteroid {
     this.orbitStep = orbitStep;
   }
   public void step(){
-	  setDirection(getDirection() + orbitStep);
+	  this.setDirection(getDirection() + orbitStep);
 	  
   }
 }
