@@ -1,7 +1,7 @@
 package spacerace.areas;
 
 import spacerace.*;
-import spacerace.players.HumanPlayer;
+
 
 
 public final class WayPoint extends Area {
