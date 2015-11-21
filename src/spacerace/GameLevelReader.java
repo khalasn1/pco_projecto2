@@ -64,7 +64,7 @@ public class GameLevelReader {
         int y = inp.nextInt();
         // TODO VALIDAR COORDENADAS
         if (x < 0 || x > Constants.GAME_AREA_LENGTH) {
-            //cenas
+            throw new InvalidLocationException("Posicao Invalida");
         }
         return new Coord2D(x,y);
     }
@@ -73,15 +73,15 @@ public class GameLevelReader {
     private static int readDirection(Scanner inp) throws InvalidDirectionException {
         int d = inp.nextInt();
         if ( d < 0 || d > 360 ){
-            //cenas
+            throw new InvalidDirectionException("Direccao Invalida");
         }
         return d;
     }
 
     private static int readSpeed(Scanner inp) throws InvalidSpeedException {
         int s = inp.nextInt();
-        if ( x < 0 || x > Constants.MAX_SPEED) {
-            //cenas
+        if ( s < 0 || s > Constants.MAX_SPEED) {
+            throw new InvalidSpeedException("Velocidade Invalida");
         }
         return s;
     }

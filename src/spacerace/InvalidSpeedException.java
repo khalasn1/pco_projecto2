@@ -1,5 +1,8 @@
 package spacerace;
 
-// TODO
 @SuppressWarnings("serial")
-public class InvalidSpeedException  { }
+public class InvalidSpeedException extends GameException  {
+    public InvalidSpeedException(String msg) {
+        super(msg);
+    }
+}
