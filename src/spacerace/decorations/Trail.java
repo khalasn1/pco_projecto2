@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import spacerace.Coord2D;
 import spacerace.Decoration;
 import spacerace.GameState;
-
+//apagar
 
 public final class Trail extends Decoration {
 
