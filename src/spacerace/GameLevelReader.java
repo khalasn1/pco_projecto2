@@ -59,23 +59,30 @@ public class GameLevelReader {
         return gs;
     }
 
-    private static Coord2D readCoord(Scanner inp) {
+    private static Coord2D readCoord(Scanner inp) throws InvalidLocationException {
         int x = inp.nextInt();
         int y = inp.nextInt();
         // TODO VALIDAR COORDENADAS
+        if (x < 0 || x > Constants.GAME_AREA_LENGTH) {
+            //cenas
+        }
         return new Coord2D(x,y);
     }
 
 
-    private static int readDirection(Scanner inp) {
+    private static int readDirection(Scanner inp) throws InvalidDirectionException {
         int d = inp.nextInt();
-        // TODO VALIDAR DIREÇÃO
+        if ( d < 0 || d > 360 ){
+            //cenas
+        }
         return d;
     }
 
-    private static int readSpeed(Scanner inp) {
+    private static int readSpeed(Scanner inp) throws InvalidSpeedException {
         int s = inp.nextInt();
-        // TODO VALIDAR VELOCIDADE
+        if ( x < 0 || x > Constants.MAX_SPEED) {
+            //cenas
+        }
         return s;
     }
 
