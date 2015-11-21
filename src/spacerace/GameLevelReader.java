@@ -20,7 +20,7 @@ public class GameLevelReader {
             inp = new Scanner(file);
         }
         else {
-            throw new FileNotFoundException("cenas");
+            throw new FileNotFoundException("Ficheiro nao encontrado");
         }
         try {
             while(inp.hasNext()) {
