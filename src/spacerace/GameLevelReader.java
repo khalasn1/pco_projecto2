@@ -14,7 +14,14 @@ public class GameLevelReader {
     public static GameState read(int level) throws FileNotFoundException, InvalidLevelException {
         GameState gs = new GameState(level);
         File file = new File(Constants.LEVELS_PATH, "level_" + level + ".txt");
-        Scanner inp = new Scanner(file);
+        Scanner inp;
+        // Exception FileNotFoundException
+        if (file.exists()) {
+            inp = new Scanner(file);
+        }
+        else {
+            throw new FileNotFoundException("Ficheiro nao encontrado");
+        }
         try {
             while(inp.hasNext()) {
                 String typeOfElem = inp.next();
