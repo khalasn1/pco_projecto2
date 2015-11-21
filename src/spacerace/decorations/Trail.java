@@ -23,9 +23,6 @@ public final class Trail extends Decoration {
 		  step = step - 1; 
 		 
 	  }
-	
-    
-    
   }
   
 
