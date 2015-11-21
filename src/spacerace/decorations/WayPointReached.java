@@ -17,6 +17,7 @@ public class WayPointReached extends Decoration {
 		cc = new Color(0,128,0, 10);
 	}
 
+	
 	@Override
 	public void step(GameState gs) {
 		  if (step > 0) {
