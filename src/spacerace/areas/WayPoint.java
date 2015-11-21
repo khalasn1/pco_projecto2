@@ -37,7 +37,6 @@ public final class WayPoint extends Area {
               gs.playSound(SoundEffect.WAYPOINT_REACHED);
               gs.addDecoration(new WayPointReached(this.getLocation()));
               p[i].advanceToNextWayPoint();
-              
           }
       }
 
