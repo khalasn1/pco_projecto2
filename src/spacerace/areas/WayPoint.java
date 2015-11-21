@@ -8,10 +8,10 @@ import spacerace.decorations.WayPointReached;
 public final class WayPoint extends Area {
 
   private int index;
-  
+
   public WayPoint(Coord2D location, int index) {
     super(location);
-    
+
       this.index = index;
       setLocation(location);
 
@@ -21,14 +21,14 @@ public final class WayPoint extends Area {
     return this.index;
   }
 
-  
+
   @Override
   public void interactWith(GameState gs, MovingElement e) {
 
       Player[] p = gs.getPlayers();
 
       for (int i = 0; i < p.length; i++) {
-          if(p[i].getTargetWayPoint() == getIndex()){
+          if(p[i].getTargetWayPoint() == getIndex() && p[i].equals(e)){
               if (getIndex() == gs.numberOfWaypoints()-1) {
             	  gs.addDecoration(new WayPointReached(this.getLocation()));
                   gs.playSound(SoundEffect.PLAYER_WON);
@@ -41,7 +41,7 @@ public final class WayPoint extends Area {
       }
 
 	}
-    
+
   /**
    * Yield way-point index as label.
    * @return A string for the way-point index.
@@ -50,7 +50,7 @@ public final class WayPoint extends Area {
   public String getLabel() {
     return String.valueOf(getIndex());
   }
-  
-  
+
+
 
 }
