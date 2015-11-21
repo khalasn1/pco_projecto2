@@ -7,24 +7,36 @@ import spacerace.Coord2D;
 import spacerace.Decoration;
 import spacerace.GameState;
 
-// TODO
+
 public final class Trail extends Decoration {
 
+  private int step = 20;
+  private Color c;
   public Trail(Coord2D location) {
     super(location);
-    // TODO
+    c = new Color(0,128,0, step);
   }
 
 
   @Override
   public void step(GameState gs) {
-    // TODO
+	  if (step > 0) {
+		  step = step - 1; 
+		 
+	  }
+	
+    
+    
   }
   
 
   @Override
   public void draw(Graphics g) {
-    // TODO
+    g.setColor(c);
+    int x = (int) this.getLocation().getX();
+    int y = (int) this.getLocation().getY();
+    g.fillOval(x, y, step , step );
   }
+
 
 }
