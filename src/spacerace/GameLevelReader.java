@@ -42,7 +42,7 @@ public class GameLevelReader {
                                 new LooseAsteroid(readCoord(inp), readDirection(inp), readSpeed(inp)));
                         break;
                     case "CrazyAsteroid":
-                        //gs.addAsteroid(new CrazyAsteroid(readCoord(inp),readDirection(inp),readSpeed(inp)));
+                        gs.addAsteroid(new CrazyAsteroid(readCoord(inp),readDirection(inp),readSpeed(inp)));
                         break;
                     case "Dust":
                         gs.addArea(new Dust(readCoord(inp)));
