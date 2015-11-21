@@ -56,7 +56,6 @@ public class GameLevelReader {
                         gs.addArea(new WormHole(readCoord(inp), readCoord(inp)));
                         break;
                     default:
-
                 }
             }
         }

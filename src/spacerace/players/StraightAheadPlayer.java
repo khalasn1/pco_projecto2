@@ -12,7 +12,10 @@ public class StraightAheadPlayer extends AIPlayer {
  
   @Override
   public void step(GameState gs) {
-    // TODO
+
+      Coord2D p = gs.getWayPointLocation(getTargetWayPoint());
+
+      setDirection(getLocation().directionTo(p));
   }
 
 }
