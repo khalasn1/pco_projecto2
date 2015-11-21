@@ -1,6 +1,7 @@
 package spacerace.areas;
 
 import spacerace.*;
+import spacerace.decorations.WayPointReached;
 
 
 
@@ -29,10 +30,12 @@ public final class WayPoint extends Area {
       for (int i = 0; i < p.length; i++) {
           if(p[i].getTargetWayPoint() == getIndex()){
               if (getIndex() == gs.numberOfWaypoints()-1) {
+            	  gs.addDecoration(new WayPointReached(this.getLocation()));
                   gs.playSound(SoundEffect.PLAYER_WON);
                   gs.gameIsOver();
               }
               gs.playSound(SoundEffect.WAYPOINT_REACHED);
+              gs.addDecoration(new WayPointReached(this.getLocation()));
               p[i].advanceToNextWayPoint();
               
           }

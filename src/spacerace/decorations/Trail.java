@@ -32,7 +32,7 @@ public final class Trail extends Decoration {
   public void draw(Graphics g) {
     g.setColor(c);
     int x = (int) this.getLocation().getX() - 10;
-    int y = (int) this.getLocation().getY();
+    int y = (int) this.getLocation().getY() - 10;
     g.fillOval(x, y, step , step );
   }
 
