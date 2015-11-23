@@ -1,7 +1,6 @@
 package spacerace.players;
 
 import spacerace.AIPlayer;
-import spacerace.Area;
 import spacerace.Coord2D;
 import spacerace.GameState;
 import spacerace.areas.Dust;
@@ -12,7 +11,6 @@ public final class CrazyPlayer extends AIPlayer {
 
     private int passos = 0;
     private boolean first = true;
-    // cenas
 
     public CrazyPlayer(Coord2D location, double direction, int referenceSpeed) {
         super(location, direction, referenceSpeed);
@@ -37,4 +35,3 @@ public final class CrazyPlayer extends AIPlayer {
         }
     }
 }
-
