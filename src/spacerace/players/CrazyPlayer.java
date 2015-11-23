@@ -8,6 +8,7 @@ import spacerace.GameState;
 public final class CrazyPlayer extends AIPlayer {
 
     private int passos = 0;
+    private boolean first = true;
 
     public CrazyPlayer(Coord2D location, double direction, int referenceSpeed) {
         super(location, direction, referenceSpeed);
@@ -15,10 +16,18 @@ public final class CrazyPlayer extends AIPlayer {
 
     @Override
     public void step(GameState gs) {
-        if (passos == 50) {
-            this.setDirection(Math.random());
-            passos = 0;
-        } else {
+        if (first) {
+            setDirection(Math.random());
+            first = false;
+        }
+        else {
+            if (passos == 50) {
+                setDirection(Math.random());
+                if (gs.getArea(this.getLocation()) instanceof EmptyArea) {
+                    gs.addArea(new Dust(getLocation()));
+                }
+                passos = 0;
+            }
             passos = passos + 1;
         }
     }
