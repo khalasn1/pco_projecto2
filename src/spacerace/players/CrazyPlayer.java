@@ -12,6 +12,7 @@ public final class CrazyPlayer extends AIPlayer {
 
     private int passos = 0;
     private boolean first = true;
+    //force merge
 
     public CrazyPlayer(Coord2D location, double direction, int referenceSpeed) {
         super(location, direction, referenceSpeed);
