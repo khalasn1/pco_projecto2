@@ -1,22 +1,34 @@
 package spacerace.players;
 
-import spacerace.AIPlayer;
-import spacerace.Constants;
-import spacerace.Coord2D;
-import spacerace.GameState;
+import spacerace.*;
+import spacerace.areas.*;
 
 // TODO
-public class SmartPlayer extends AIPlayer { 
+public class SmartPlayer extends AIPlayer {
+
   public SmartPlayer(Coord2D location, double direction, int referenceSpeed) {
     super(location, direction, referenceSpeed);
   }
 
   public void step (GameState gs) {
 
-      double d = 90;
+      Area look = gs.getArea(getLocation().displace(Constants.ELEM_WIDTH * 1.1 , getDirection()));
 
+      if (look instanceof BlackHole || look instanceof Planet) {
+        //ignore d
+      }
 
+      if (look instanceof EmptyArea) {
+        // evaluate d to waypoint destiny
+      }
 
+      if (look instanceof Dust) {
+        // evaluate d to waypoint destiny * 1.25
+      }
+
+      if (look instanceof WormHole) {
+        // not sure
+      }
   }
   
 }

@@ -14,5 +14,3 @@ public final class OrbitalAsteroid extends Asteroid {
 	  
   }
 }
-
- 
