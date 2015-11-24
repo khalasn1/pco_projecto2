@@ -25,7 +25,7 @@ public final class CrazyPlayer extends AIPlayer {
         }
         else {
             if (passos == 50) {
-                setDirection(Math.random());
+                setDirection(90);
                 if (gs.getArea(this.getLocation()) instanceof EmptyArea) {
                     gs.addArea(new Dust(getLocation()));
                 }

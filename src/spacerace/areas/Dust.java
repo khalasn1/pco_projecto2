@@ -17,7 +17,6 @@ public final class Dust extends Area {
 	@Override
 	public void interactWith(GameState gs, MovingElement e) {
 		e.setMaximumSpeed(Constants.MAX_SPEED_IN_DUST);
-		
 	}
 
 

@@ -19,7 +19,6 @@ public final class BlackHole extends Area  {
 	public void interactWith(GameState gs, MovingElement e) {
 		e.die();
 		gs.playSound(SoundEffect.EXPLOSION);
-		
 	} 
  
 }

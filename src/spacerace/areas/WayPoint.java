@@ -4,7 +4,6 @@ import spacerace.*;
 import spacerace.decorations.WayPointReached;
 
 
-
 public final class WayPoint extends Area {
 
   private int index;
@@ -25,22 +24,21 @@ public final class WayPoint extends Area {
   @Override
   public void interactWith(GameState gs, MovingElement e) {
 
-      Player[] p = gs.getPlayers();
+      Player[] players = gs.getPlayers();
 
-      for (int i = 0; i < p.length; i++) {
-          if(p[i].getTargetWayPoint() == getIndex() && p[i].equals(e)){
+      for (Player i : players) {
+          if (i.getTargetWayPoint() == getIndex() && i.equals(e)) {
               if (getIndex() == gs.numberOfWaypoints()-1) {
-            	  gs.addDecoration(new WayPointReached(this.getLocation()));
+                  gs.addDecoration(new WayPointReached(getLocation()));
                   gs.playSound(SoundEffect.PLAYER_WON);
                   gs.gameIsOver();
               }
               gs.playSound(SoundEffect.WAYPOINT_REACHED);
-              gs.addDecoration(new WayPointReached(this.getLocation()));
-              p[i].advanceToNextWayPoint();
+              gs.addDecoration(new WayPointReached(getLocation()));
+              i.advanceToNextWayPoint();
           }
       }
-
-	}
+  }
 
   /**
    * Yield way-point index as label.
@@ -50,7 +48,5 @@ public final class WayPoint extends Area {
   public String getLabel() {
     return String.valueOf(getIndex());
   }
-
-
 
 }

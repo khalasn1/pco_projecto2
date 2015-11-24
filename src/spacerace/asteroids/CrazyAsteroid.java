@@ -15,16 +15,16 @@ public final class CrazyAsteroid extends Asteroid{
 	public void step(){
 
         if (first) {
-            setDirection(Math.random());
+            setDirection(Math.random()*360.0);
             first = false;
         }
 
-		if (passos == 100){
-			this.setDirection(Math.random());
-			passos = 0;
-		}
-		else{
-			passos = passos + 1;
-		}
+        if (passos != 100) {
+            passos ++;
+        }
+
+        if (passos == 100) {
+            setDirection(Math.random()*360.0);
+        }
 	}
 }

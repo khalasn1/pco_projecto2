@@ -19,9 +19,6 @@ public final class Planet extends Area {
 	public void interactWith(GameState gs, MovingElement e) {
 		e.setDirection(e.getDirection() - 180);
 		gs.playSound(SoundEffect.COLLISION);
-		
-
-		
 	}
   
 }

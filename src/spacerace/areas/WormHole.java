@@ -25,7 +25,7 @@ public final class WormHole extends Area {
 
 	@Override
 	public void interactWith(GameState gs, MovingElement e) {
-		double d= e.getDirection();
+		double d = e.getDirection();
 		e.setLocation(out.displace(Constants.ELEM_WIDTH * 1.1, d));
 		gs.playSound(SoundEffect.ENTER_WORMHOLE);
 	}

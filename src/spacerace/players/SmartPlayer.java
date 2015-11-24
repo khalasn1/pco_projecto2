@@ -15,19 +15,25 @@ public class SmartPlayer extends AIPlayer {
       Area look = gs.getArea(getLocation().displace(Constants.ELEM_WIDTH * 1.1 , getDirection()));
 
       if (look instanceof BlackHole || look instanceof Planet) {
-        //ignore d
+        /* ignore d */
       }
 
       if (look instanceof EmptyArea) {
-        // evaluate d to waypoint destiny
+        /* evaluate d to waypoint destiny */
+
+          setDirection(0);
+
+          Coord2D p = gs.getWayPointLocation(getTargetWayPoint());
+
+          double distance = p.distanceTo(p);
       }
 
       if (look instanceof Dust) {
-        // evaluate d to waypoint destiny * 1.25
+        /* evaluate d to waypoint destiny * 1.25 */
       }
 
       if (look instanceof WormHole) {
-        // not sure
+        /* not sure */
       }
   }
   
