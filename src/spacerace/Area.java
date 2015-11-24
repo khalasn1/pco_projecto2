@@ -21,6 +21,5 @@ public abstract class Area extends GameElement {
    */
   public abstract void 
   interactWith(GameState gs, MovingElement e);
-  
 
 }
