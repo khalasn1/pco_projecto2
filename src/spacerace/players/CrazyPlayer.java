@@ -20,18 +20,20 @@ public final class CrazyPlayer extends AIPlayer {
     public void step(GameState gs) {
 
         if (first) {
-            setDirection(Math.random());
+            setDirection(Math.random()*360.0);
             first = false;
         }
-        else {
-            if (passos == 50) {
-                setDirection(90);
-                if (gs.getArea(this.getLocation()) instanceof EmptyArea) {
-                    gs.addArea(new Dust(getLocation()));
-                }
-                passos = 0;
+
+        if (passos != 50) {
+            passos ++;
+        }
+
+        if (passos == 50) {
+            setDirection(Math.random()*360.0);
+            if (gs.getArea(this.getLocation()) instanceof EmptyArea) {
+                gs.addArea(new Dust(getLocation()));
             }
-            passos = passos + 1;
+            passos = 0;
         }
     }
 }

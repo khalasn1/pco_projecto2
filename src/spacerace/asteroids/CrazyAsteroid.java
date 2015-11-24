@@ -25,6 +25,7 @@ public final class CrazyAsteroid extends Asteroid{
 
         if (passos == 100) {
             setDirection(Math.random()*360.0);
+            passos = 0;
         }
 	}
 }
