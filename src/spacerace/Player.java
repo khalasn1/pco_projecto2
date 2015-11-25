@@ -1,6 +1,5 @@
 package spacerace;
 
-// TODO A COMPLETAR
 public abstract class Player extends MovingElement {
   
   public Player(Coord2D location, double direction, int referenceSpeed) {
