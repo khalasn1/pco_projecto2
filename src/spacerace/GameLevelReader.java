@@ -61,8 +61,11 @@ public class GameLevelReader {
                        break;
                     case "CrazyPlayer":
                         gs.addAIPlayer(new CrazyPlayer(readCoord(inp), readDirection(inp), readSpeed(inp)));
+                        break;
+                  
                     case "OrbitalAsteroid":
                     	gs.addAsteroid(new OrbitalAsteroid(readCoord(inp), readDirection(inp), readSpeed(inp)));
+                    	break;
                     default:
                 }
             }
