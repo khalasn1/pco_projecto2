@@ -12,6 +12,8 @@ public class SmartPlayer extends AIPlayer {
 
   public void step (GameState gs) {
 
+      //  d = 0,90,180,270;
+
       Area look = gs.getArea(getLocation().displace(Constants.ELEM_WIDTH * 1.1 , getDirection()));
 
       if (look instanceof BlackHole || look instanceof Planet) {

@@ -18,12 +18,7 @@ public final class CrazyPlayer extends AIPlayer {
 
     @Override
     public void step(GameState gs) {
-
-        if (first) {
-            setDirection(Math.random()*360.0);
-            first = false;
-        }
-
+        
         if (passos != 50) {
             passos ++;
         }
