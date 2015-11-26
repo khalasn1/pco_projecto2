@@ -57,22 +57,5 @@ public class SmartPlayer extends AIPlayer {
         else {
             setDirection(270);
         }
-
-        /*
-        if (wp.compareTo(lookFour.getLocation()) > wp.compareTo(lookThree.getLocation())) {
-            setDirection(180);
-
-        }
-        else if (wp.compareTo(lookThree.getLocation()) > wp.compareTo(lookTwo.getLocation())) {
-            setDirection(90);
-
-        }
-        else if (wp.compareTo(lookTwo.getLocation()) > wp.compareTo(lookOne.getLocation())) {
-            setDirection(0);
-        }
-        else {
-            setDirection(0);
-        }
-        */
     }
 }
