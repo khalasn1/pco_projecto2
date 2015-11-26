@@ -43,6 +43,22 @@ public class SmartPlayer extends AIPlayer {
         }
         */
 
+        if (wp.distanceTo(lookFour.getLocation()) > wp.distanceTo(lookThree.getLocation())) {
+            setDirection(180);
+        }
+
+        else if (wp.distanceTo(lookThree.getLocation()) > wp.distanceTo(lookTwo.getLocation())) {
+            setDirection(90);
+        }
+
+        else if (wp.distanceTo(lookTwo.getLocation()) > wp.distanceTo(lookOne.getLocation())) {
+            setDirection(0);
+        }
+        else {
+            setDirection(270);
+        }
+
+        /*
         if (wp.compareTo(lookFour.getLocation()) > wp.compareTo(lookThree.getLocation())) {
             setDirection(180);
 
@@ -57,6 +73,6 @@ public class SmartPlayer extends AIPlayer {
         else {
             setDirection(0);
         }
-
+        */
     }
 }
