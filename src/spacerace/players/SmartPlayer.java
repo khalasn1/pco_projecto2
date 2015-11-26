@@ -29,7 +29,7 @@ public class SmartPlayer extends AIPlayer {
         Area lookThree = gs.getArea(p.displace(Constants.ELEM_WIDTH * 1.1, 180));
         Area lookFour = gs.getArea(p.displace(Constants.ELEM_WIDTH * 1.1, 270));
 
-        if (look.getClass() != BlackHole.class || look.getClass()!= Planet.class) {
+        /* if (look.getClass() != BlackHole.class || look.getClass()!= Planet.class) {
             if (look.getClass() == WormHole.class) {
 
             }
@@ -41,6 +41,7 @@ public class SmartPlayer extends AIPlayer {
 
             }
         }
+        */
 
         if (wp.compareTo(lookFour.getLocation()) > wp.compareTo(lookThree.getLocation())) {
             setDirection(180);
@@ -52,10 +53,9 @@ public class SmartPlayer extends AIPlayer {
         }
         else if (wp.compareTo(lookTwo.getLocation()) > wp.compareTo(lookOne.getLocation())) {
             setDirection(0);
-
         }
         else {
-            setDirection(270);
+            setDirection(0);
         }
 
     }
