@@ -4,6 +4,7 @@ import spacerace.*;
 import spacerace.areas.*;
 
 // TODO
+
 public class SmartPlayer extends AIPlayer {
 
     /* Construtor SmartPlayer
@@ -19,6 +20,8 @@ public class SmartPlayer extends AIPlayer {
 
         Coord2D p = Constants.normalize(getLocation());
 
+        Coord2D wp = gs.getWayPointLocation(getTargetWayPoint());
+
         Area look = gs.getArea(p.displace(Constants.ELEM_WIDTH * 1.1, getDirection()));
 
         Area lookOne = gs.getArea(p.displace(Constants.ELEM_WIDTH * 1.1, 0));
@@ -26,19 +29,28 @@ public class SmartPlayer extends AIPlayer {
         Area lookThree = gs.getArea(p.displace(Constants.ELEM_WIDTH * 1.1, 180));
         Area lookFour = gs.getArea(p.displace(Constants.ELEM_WIDTH * 1.1, 270));
 
-        Coord2D nextWaypoint = gs.getWayPointLocation(getTargetWayPoint());
+        if (look.getClass() != BlackHole.class || look.getClass()!= Planet.class) {
+            if (look.getClass() == WormHole.class) {
 
+            }
 
-        if (nextWaypoint.compareTo(lookFour.getLocation()) > nextWaypoint.compareTo(lookThree.getLocation())) {
+            else if (look.getClass() == Dust.class) {
 
+            }
+            else {
+
+            }
+        }
+
+        if (wp.compareTo(lookFour.getLocation()) > wp.compareTo(lookThree.getLocation())) {
             setDirection(180);
 
         }
-        else if (nextWaypoint.compareTo(lookThree.getLocation()) > nextWaypoint.compareTo(lookTwo.getLocation())) {
+        else if (wp.compareTo(lookThree.getLocation()) > wp.compareTo(lookTwo.getLocation())) {
             setDirection(90);
 
         }
-        else if (nextWaypoint.compareTo(lookTwo.getLocation()) > nextWaypoint.compareTo(lookOne.getLocation())) {
+        else if (wp.compareTo(lookTwo.getLocation()) > wp.compareTo(lookOne.getLocation())) {
             setDirection(0);
 
         }
@@ -46,33 +58,5 @@ public class SmartPlayer extends AIPlayer {
             setDirection(270);
         }
 
-
-        //cria a var "look" aqui. porque entretanto, a dir muda
-
-
-        if ( look instanceof EmptyArea) {
-        }
-
-        if (look instanceof BlackHole || look instanceof Planet) {
-            // ignore d
-        }
-
-        if (look instanceof EmptyArea) {
-
-
-            setDirection(0);
-
-            Coord2D b = gs.getWayPointLocation(getTargetWayPoint());
-
-            double distance = p.distanceTo(p);
-        }
-
-        if (look instanceof Dust) {
-
-        }
-
-        if (look instanceof WormHole) {
-
-        }
     }
 }
