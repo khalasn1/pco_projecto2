@@ -4,8 +4,6 @@ import spacerace.*;
 import spacerace.areas.*;
 import java.util.ArrayList;
 
-// TODO
-
 public class SmartPlayer extends AIPlayer {
 
     /* Construtor Class SmartPlayer
