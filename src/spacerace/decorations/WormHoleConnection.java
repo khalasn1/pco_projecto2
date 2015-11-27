@@ -11,6 +11,7 @@ import spacerace.areas.WormHole;
 
 /**
  * Decoration of worm-hole connection.
+ * @author fc45810 Ana Espinheira, fc44314 Francisco Pires
  */
 public final class WormHoleConnection extends Decoration {
   private Coord2D exit;
@@ -34,7 +35,9 @@ public final class WormHoleConnection extends Decoration {
     	a = 0;
     }
   }
-
+/**
+ * Draw of WormHoleConnection
+ */
   @Override
   public void draw(Graphics g) {
 	 
