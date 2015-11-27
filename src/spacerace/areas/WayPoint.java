@@ -3,11 +3,19 @@ package spacerace.areas;
 import spacerace.*;
 import spacerace.decorations.WayPointReached;
 
-
+/**
+ * Way Point
+ * @author fc45810 Ana Espinheira, fc44314 Francisco Pires
+ *
+ */
 public final class WayPoint extends Area {
 
   private int index;
-
+/**
+ * construtor
+ * @param location localizacao do waypoint
+ * @param index indice do waypoint
+ */
   public WayPoint(Coord2D location, int index) {
     super(location);
 
@@ -15,12 +23,19 @@ public final class WayPoint extends Area {
       setLocation(location);
 
   }
-
+/**
+ * retorna o indice
+ * @return index
+ */
   public int getIndex() {
     return this.index;
   }
 
-
+/**
+ * interacao com game state.
+ * a interecao tem efeito.
+ * @param gs GameState
+ */
   @Override
   public void interactWith(GameState gs, MovingElement e) {
 
